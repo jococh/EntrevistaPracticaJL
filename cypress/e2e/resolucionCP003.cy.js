@@ -7,23 +7,23 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 //Tercer Caso de Prueba
 describe('CP003 - Validar cuotas en compra de equipo - Credicoop Visa', () => {
   const paginaTienda = new StorePage();
+  
+  it('Debe visitar la tienda de Movistar y seleccionar producto para validar cuotas', () => {
+    // Paso 1: Visitar la tienda de Movistar
+    cy.log('Visitar la tienda de Movistar');
+    paginaTienda.visitar();
 
-  it('Debe visitar la tienda de Movistar', () => {
-    
-  // Paso 1: Visitar la tienda de Movistar
-  cy.log('Visitar la tienda de Movistar');
-  paginaTienda.visitar();
+    // Paso 2: Seleccionar el tercer producto
+    cy.log('Seleccionar el tercer equipo de la lista');
+    paginaTienda.seleccionarProductoPorIndice(2); 
 
-  // Paso 2: Seleccionar el tercer producto
-  cy.log('Seleccionar el tercer equipo de la lista');
-  paginaTienda.seleccionarProductoPorIndice(2); 
+    // Paso 4: Validar que NO existe la opción de 60 cuotas para Credicoop con Visa
+    cy.log('Validar cantidad de cuotas');
+    paginaTienda.validarNoCuotas60();
+    });
 
-  // Paso 4: Validar que NO existe la opción de 60 cuotas para Credicoop con Visa
-  cy.log('Validar cantidad de cuotas');
-  paginaTienda.validarNoCuotas60();
-  });
-
-  after(() => {
-    cy.screenshot(`Final del Test CP003`);
-  });
+    after(() => {
+      cy.screenshot(`Final del Test CP003`);
+    });
+   
 });

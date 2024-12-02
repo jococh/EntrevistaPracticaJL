@@ -8,7 +8,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 describe('CP002 - Aplicar filtro de equipos - Memoria Interna 128GB - Precio Entre 200K y 300K', () => {
   const paginaTienda = new StorePage();
 
-  it('Debe visitar la tienda de Movistar', () => {
+  it('Debe visitar la tienda de Movistar, aplicar filtros y validar cantidad de equipos', () => {
     cy.log('Visitar la tienda de Movistar');
     // Paso 1: Visitar la tienda de Movistar
     paginaTienda.visitar();  

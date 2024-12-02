@@ -9,7 +9,7 @@ describe('CP001 - Validar cuotas en compra de equipo - A14', () => {
   const paginaTienda = new StorePage();
   const producto = 'A14'; // Nombre del producto a buscar
   
-  it('Debe buscar el equipo A14 e ingresar al producto', () => {
+  it('Debe buscar el equipo A14 e ingresar al producto para validar cuotas', () => {
     cy.log('Buscar e ingresar al producto A14');
     //1: Visitar la tienda de Movistar
     paginaTienda.visitar();
