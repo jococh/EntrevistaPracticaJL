@@ -11,11 +11,11 @@
   ],
   "author": "Joaquin Leguizamón",
   "license": "ISC",
-  "dependencies": {
-    "cypress": "^13.16.0"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jococh/EntrevistaPracticaJL"
   },
-"repository": {
-  "type": "git",
-  "url": "https://github.com/jococh/EntrevistaPracticaJL"
-}
+  "devDependencies": {
+    "cypress": "^13.16.0"
+  }
 }
